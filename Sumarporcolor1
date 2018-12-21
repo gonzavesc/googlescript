@@ -1,0 +1,14 @@
+function Sumarporcolor1(colorref, range,dummy) {
+  var sheet = SpreadsheetApp.getActiveSheet();
+  var color = sheet.getRange(colorref).getBackground();
+  var rang = sheet.getRange(range);
+  var RangeVal = rang.getValues();
+  var count = 0;
+  var allColors = rang.getBackgrounds();
+  for (var i = 0; i < allColors.length; i++) {
+        for (var j = 0; j < allColors[0].length; j++) {
+            if (allColors[i][j] == color) count += RangeVal[i][j];
+        };
+    };
+  return count;
+}
