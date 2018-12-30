@@ -1,4 +1,5 @@
 function setCal(name, dat) {
+  // NEED TO ADD TRIGER TO WORK ONEDIT!!!
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Hoja 1");
   var editedCell = sheet.getActiveCell();
   var T = sheet.getRange(1,2).getValue();
