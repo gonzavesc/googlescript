@@ -10,7 +10,7 @@ function onEdit(event) {
     range.sort( { column : columnToSortBy } );
   }
   var columnToSortBy = 7;
-  var tableRange = "F2:G";
+  var tableRange = "E2:G";
   var col = editedCell.getColumn();
   var lin = editedCell.getRow();
   var tete = sheet.getRange(lin,col);
