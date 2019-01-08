@@ -3,6 +3,7 @@ function setCal(name, dat) {
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Hoja 1");
   var editedCell = sheet.getActiveCell();
   var T = sheet.getRange(1,2).getValue();
+  var Tf = sheet.getRange(2, 2).getValue();
   // Adding to calendar!!!//
   col = editedCell.getColumn();
   lin = editedCell.getRow();
@@ -31,6 +32,22 @@ function setCal(name, dat) {
       if (ok)
       {
         CalendarApp.getDefaultCalendar().createAllDayEvent(name, C);
+      }
+      
+    }
+    if (tick == Tf)
+    {
+      D = new Date(dat);
+      C = new Date(D.getTime() + 1000*3600*9+1000);
+      dateEvents = CalendarApp.getEventsForDay(C);
+      jlen = dateEvents.length;
+      for (j = 0; j < jlen; j++)
+      {
+        if (dateEvents[j].getTitle() == name)
+        {
+          dateEvents[j].deleteEvent();
+        }
+        
       }
       
     }
