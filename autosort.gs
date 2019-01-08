@@ -50,6 +50,7 @@ function onEdit(event) {
       sheet.getRange(j,6).setValue(empty);
       sheet.getRange(j,7).setValue(empty);
       sheet.getRange(j,8).setValue('FALSE');
+      sheet.getRange(j,5).setValue('FALSE');
       sheet.getRange(l2,10).setValue(task);
       sheet.getRange(l2,11).setValue(tod);
       sheet.getRange(l2,12).setValue(dat);
