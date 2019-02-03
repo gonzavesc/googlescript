@@ -13,8 +13,11 @@ function setCal(name, dat) {
     var name = sheet.getRange(lin, col + 1).getValue();
     var dat = sheet.getRange(lin, col + 2).getValue();
     var tick = sheet.getRange(lin, col).getValue();
-    
-    if (tick == T)
+    if (tick == T && name == '')
+    {
+      sheet.getRange(lin,col).setValue('FALSE');
+    }
+    if (tick == T && name != '')
     {
       var D = new Date(dat);
       var C = new Date(D.getTime() + 1000*3600*9+1000);
