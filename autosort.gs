@@ -44,17 +44,21 @@ function onEdit(event) {
   var T = sheet.getRange(1,2).getValue();
   for (var j = 2;j<=l;j++) {
     val = sheet.getRange(j,8).getValue();
+    var val2 = sheet.getRange(j,6).getValue);
     if (val==T) {
+      sheet.getRange(j,8).setValue('FALSE');
+      sheet.getRange(j,5).setValue('FALSE');
+      if (val2 != empty){
       task = sheet.getRange(j,6).getValue();
       dat = sheet.getRange(j,7).getValue();
       sheet.getRange(j,6).setValue(empty);
       sheet.getRange(j,7).setValue(empty);
-      sheet.getRange(j,8).setValue('FALSE');
-      sheet.getRange(j,5).setValue('FALSE');
+      
       sheet.getRange(l2,10).setValue(task);
       sheet.getRange(l2,11).setValue(tod);
       sheet.getRange(l2,12).setValue(dat);
       l2=l2+1;
+      }
     }
   }
   var l3 = 0;
